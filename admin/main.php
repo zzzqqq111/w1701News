@@ -75,6 +75,20 @@ if(!isset($_SESSION["login"])){
                             </li>
                         </ul>
                     </li>
+
+
+                <li>
+                    <a href="javascript:;">内容管理</a>
+                    <ul>
+                        <li>
+                            <a href="addCon.php" target="iframe">添加内容</a>
+                        </li>
+
+                        <li>
+                            <a href="showCategory.php" target="iframe">查看内容</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="right">
