@@ -1,3 +1,12 @@
+<?php
+header("content-type:text/html;charset=utf8");
+session_start();
+if(!isset($_SESSION["login"])){
+    echo "<script>alert('请先登录');location.href='login.php'</script>";
+
+    exit;
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,6 +15,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+
     <style>
         html,body{
             width:100%;height:100%;
@@ -44,6 +55,10 @@
 <body>
     <header>
         欢迎xxx来到新闻管理系统
+
+        <span>
+            <a href="logout.php">安全退出</a>
+        </span>
     </header>
     <div class="box">
         <div class="left">

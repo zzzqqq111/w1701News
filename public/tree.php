@@ -108,17 +108,20 @@ class tree{
         $sql="select * from ".$table." where pid=".$pid;
         $result=$db->query($sql);
         $this->str.="<ul>";
-        while ($row=$result->fetch_assoc()) {
-            //  1. 编程类    2.管理类
-            $id=$row["id"];
-            $catname=$row["catname"];
-            //$str=str_repeat($flag,$step);
-            $this->str.="<li> <span>{$catname}</span>  <a href='delCategory.php?id={$id}'>删除</a> <a href='editCategory.php?id={$id}'>编辑</a>";
 
-            $this->getTree1($id,$step,$flag,$db,$table);
+            while ($row = $result->fetch_assoc()) {
+                //  1. 编程类    2.管理类
+                $id = $row["id"];
+                $catname = $row["catname"];
+                //$str=str_repeat($flag,$step);
+                $this->str .= "<li> <span>{$catname}</span>  <a href='delCategory.php?id={$id}'>删除</a> <a href='editCategory.php?id={$id}'>编辑</a>";
 
-        }
-        $this->str.="</li></ul>";
+                $this->getTree1($id, $step, $flag, $db, $table);
+
+
+            }
+            $this->str .= "</li></ul>";
+
 
     }
 

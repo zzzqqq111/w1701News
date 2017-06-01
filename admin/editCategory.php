@@ -14,6 +14,7 @@
   $id=$_GET["id"];
   $sql="select * from category where id=".$id;
   $result=$db->query($sql);
+
   $row=$result->fetch_assoc();
 
 
