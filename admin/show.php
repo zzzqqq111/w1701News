@@ -18,7 +18,6 @@
   include  "../public/db.php";
   $sql="select * from lists where cid=".$id;
   $result=$db->query($sql);
-
   if(mysqli_num_rows($result)>0) {
       ?>
       <table>
@@ -27,7 +26,7 @@
               <th>内容</th>
           </tr>
           <?php
-           while ($row=$result->fetch_assoc()) {
+           while($row=$result->fetch_assoc()) {
                ?>
                <tr>
                    <td>

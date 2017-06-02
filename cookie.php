@@ -1,6 +1,11 @@
 <?php
+$a=0;
+$str="";
+while ($a<10){
+    $a++;
+    $str.=$a;
 
- session_start();
- //在同域下面才能访问到
+}
+echo $str;
 
 ?>

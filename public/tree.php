@@ -67,7 +67,7 @@ echo $num;    0
  *     github
  *      新闻类app
  *
- *
+ *     过程化的方式去写功能  麻烦  难
  * */
 class tree{
     public  $str="";
@@ -152,8 +152,7 @@ class tree{
 
         }
         $this->str .= "</li></ul>";
-
-
+        /*递归*/
     }
 
 

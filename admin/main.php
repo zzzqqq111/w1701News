@@ -16,7 +16,8 @@ if(!isset($_SESSION["login"])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-
+    <link rel="stylesheet" href="a.css">
+    <script src="aa.js"></script>
     <style>
         html,body{
             width:100%;height:100%;
@@ -53,6 +54,7 @@ if(!isset($_SESSION["login"])){
     </style>
 </head>
 <body>
+
     <header>
         欢迎xxx来到新闻管理系统
 

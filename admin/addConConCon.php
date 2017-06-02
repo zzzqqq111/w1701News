@@ -4,7 +4,6 @@
  $cid=$_GET["cid"];
  $title=$_GET["title"];
  $con=$_GET["con"];
-
   $sql="insert into lists (title,con,cid) VALUES ('{$title}','{$con}',$cid)";
   $db->query($sql);
   if($db->affected_rows>0){
