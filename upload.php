@@ -1,8 +1,9 @@
 <?php
+
+//1.  接口   2.  接收数据    3. 数据来检查    4.  move_uopload_file
 var_dump($_FILES["file"]);
 
 exit;
-
 
 
 
