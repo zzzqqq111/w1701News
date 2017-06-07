@@ -46,5 +46,31 @@
 
 
       </div>
+
+    <div class="more">
+       <div class="header">
+           <span>行政管理</span>
+           <a href="">更多</a>
+       </div>
+        <?php
+          $sql="select * from lists where cid=5";
+        $result=$db->query($sql);
+        ?>
+       <ul>
+           <?php
+             while ($row=$result->fetch_assoc()) {
+                 ?>
+                 <li>
+                     <a href="show.php?id=<?php echo $row['id']?>">
+<?php
+ echo $row["title"]
+?>
+                     </a>
+                 </li>
+                 <?php
+             }
+         ?>
+       </ul>
+    </div>
 </body>
 </html>

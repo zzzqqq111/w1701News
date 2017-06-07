@@ -1,44 +1,48 @@
 <?php
+var_dump($_FILES["file"]);
 
-
-header("content-type:text/html;charset=utf-8");
-/*
- *   1. 临时目录   baidu.com/aa/
- *
- *      // 1. 数据
- *         2. 两部分验证
- *            1.  前台验证  （给用户提供方便）
- *            2.  后台验证   (数据的安全)
- *
- *
- *
- *  */
+exit;
 
 
 
-  $type=array(
-      "image/jpeg","image/png","image/gif"
-  );
- if(is_uploaded_file($_FILES["file"]["tmp_name"])){
 
-       //1.  是不是上传文件
-       //2.  是不是指定的类型
-       //3.  是不是指定的大小
-     //if(in_array($_FILES["file"]["type"],$type)){
+/*类的方法*/
+$type=array(
+    "image/jpeg",
+    "image/png",
+    "image/gif"
+);
 
-         $dir=date("y-m-d");
-         if(!is_dir("./upload/".$dir)){
-             mkdir("./upload/".$dir);
-         }
+$size=1024*1024*10;
+//1.  看我们要处理的这个文件是不是用户上传的文件
+if(is_uploaded_file($_FILES["file"]["tmp_name"])){
+    //2.  判断的是文件类型或者是大小
+    // 时间
+    if(in_array($_FILES["file"]["type"],$type)&&$_FILES["file"]["size"]<$size){
 
-         $name=time().$_FILES["file"]["name"];
+        $dir="upload";
 
-         $fullpath="./upload/".$dir."/".$name;
-         move_uploaded_file($_FILES["file"]["tmp_name"],$fullpath);
-         echo "ok";
-     //}else{
-       //  echo "类型错误";
-     //}
+        if(!is_dir($dir)){
+            mkdir($dir);
+        }
 
- }
+        $path=date("y-m-d");
+
+        if(!is_dir($dir."/".$path)){
+            mkdir($dir."/".$path);
+        }
+
+        $name=md5(time().mt_rand(0,10000)).$_FILES["file"]["name"];
+
+        $fullpath=$dir."/".$path."/".$name;
+
+
+        move_uploaded_file($_FILES["file"]["tmp_name"],$fullpath);
+        echo "ok";
+    }else{
+        echo "error";
+    }
+
+
+}
 ?>
