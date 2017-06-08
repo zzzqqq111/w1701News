@@ -1,17 +1,8 @@
-//  es6.0
-
-
-
-
-
-
-
-
 class upload {
     constructor() {
         this.type = "image/jpeg,image/png,image/gif";
         this.size = 1024;
-        this.containerStyle = {width: 300, border: "1px solid #ccc"}
+        this.containerStyle = {width: 300, border: "1px solid #ccc"};
         this.selectBtnStyle = {width: 150, height: 40, background: "orange", text: "选择图片"};
         this.uploadBtnStyle = {width: 150, height: 40, background: "green", text: "上传图片"};
 
@@ -64,7 +55,7 @@ class upload {
             }
 
 
-            for (let i = 0; i < that.data.length; i++) {
+            for (var i = 0; i < that.data.length; i++) {
                 var form = new FormData();
                 form.append("file", that.data[i]);
 
@@ -96,8 +87,9 @@ class upload {
 
     //检查
     check() {
-
+           var that=this;
         // 无论是不是符合条件，视图要呈现，但是如果不符合条件，数据要删除
+
 
         var temp = [];
         for (var i = 0; i < this.data.length; i++) {
@@ -128,12 +120,24 @@ class upload {
                     }
                 }
 
+                obj.delBtn.onclick=function(){
+                    this.parentNode.parentNode.removeChild(this.parentNode);
+                }
+
             } else {
                 this.lists.push(obj);
-
             }
 
+        }
 
+
+        for(var i=0;i<this.lists.length;i++){
+            this.lists[i].delBtn.index=i;
+            this.lists[i].delBtn.onclick=function(){
+                this.parentNode.parentNode.removeChild(this.parentNode);
+                that.data.splice(this.index,1);
+
+            }
         }
     }
 
@@ -257,18 +261,11 @@ class upload {
         div.appendChild(message);
         div.appendChild(delBtn);
         this.P.appendChild(div);
-
         div.onmouseover = function () {
             delBtn.style.display = "block";
         }
         div.onmouseout = function () {
             delBtn.style.display = "none";
-        }
-
-        delBtn.onclick = function () {
-            var parent = this.parentNode;
-            var P = parent.parentNode;
-            P.removeChild(parent);
         }
 
         return {
@@ -278,14 +275,13 @@ class upload {
             message: message,
             delBtn: delBtn
         }
-
     }
-
 }
 
 window.onload = function () {
+
     var obj = new upload();
-    obj.size = 1024 * 1024 * 10;
+    obj.size = 1024 * 1024 * 8.6;
     obj.selectBtnStyle.background = "red";
     obj.createView({
         parent: document.body
