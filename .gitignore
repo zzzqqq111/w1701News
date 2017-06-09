@@ -1,3 +1,4 @@
 /admin/upload
 /static/editor
 /ueditor
+.gitignore

@@ -16,8 +16,6 @@ if(!isset($_SESSION["login"])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href="a.css">
-    <script src="aa.js"></script>
     <style>
         html,body{
             width:100%;height:100%;
