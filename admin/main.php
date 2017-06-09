@@ -56,7 +56,7 @@ if(!isset($_SESSION["login"])){
 <body>
 
     <header>
-        欢迎xxx来到新闻管理系统
+        欢迎<?php echo $_SESSION["uname"]?>来到新闻管理系统
 
         <span>
             <a href="logout.php">安全退出</a>

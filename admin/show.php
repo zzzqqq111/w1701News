@@ -23,7 +23,8 @@
       <table>
           <tr>
               <th>标题</th>
-              <th>内容</th>
+              <th>缩略图</th>
+              <th>操作</th>
           </tr>
           <?php
            while($row=$result->fetch_assoc()) {
@@ -36,9 +37,14 @@
                    </td>
                    <td>
 
-                       <?php
-                       echo $row["con"];
-                       ?>
+                       <img src="<?php
+                       echo $row["imgurl"];
+                       ?>" alt="" width="100">
+
+                   </td>
+                   <td>
+                       <a href="delCon.php?id=<?php echo $row['id']?>&cid=<?php echo $row['cid']?>" >删除</a>
+                       <a href="editCon.php?id=<?php echo $row['id']?>&cid=<?php echo $row['cid']?>">编辑</a>
                    </td>
                </tr>
                <?php
