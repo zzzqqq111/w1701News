@@ -92,6 +92,21 @@ if(!isset($_SESSION["login"])){
                         </li>
                     </ul>
                 </li>
+
+
+
+                <li>
+                    <a href="javascript:;">位置管理</a>
+                    <ul>
+                        <li>
+                            <a href="addPos.php" target="iframe">添加位置</a>
+                        </li>
+
+                        <li>
+                            <a href="showCategory.php" target="iframe">查看位置</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="right">

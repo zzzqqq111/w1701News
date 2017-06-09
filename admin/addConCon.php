@@ -22,6 +22,19 @@
     <input type="hidden" value="<?php echo $_GET['cid']?>" name="cid">
     <input type="hidden" name="imgurl">
      <div class="uploadbox"></div>
+    推荐位：
+    <?php
+      include "../public/db.php";
+      $sql="select * from position";
+      $result=$db->query($sql);
+      while ($info=$result->fetch_assoc()) {
+          ?>
+
+      <?php echo $info["posname"]?>      <input type="radio" name="posid" value="<?php echo $info['posid']?>">
+
+          <?php
+      }
+    ?>
     <input type="submit" value="提交">
 </form>
 <script>

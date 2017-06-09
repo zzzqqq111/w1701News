@@ -24,6 +24,7 @@
           <tr>
               <th>标题</th>
               <th>缩略图</th>
+              <th>位置信息</th>
               <th>操作</th>
           </tr>
           <?php
@@ -41,6 +42,11 @@
                        echo $row["imgurl"];
                        ?>" alt="" width="100">
 
+                   </td>
+                   <td>
+                       <?php
+                         echo $row["posid"];
+                       ?>
                    </td>
                    <td>
                        <a href="delCon.php?id=<?php echo $row['id']?>&cid=<?php echo $row['cid']?>" >删除</a>
