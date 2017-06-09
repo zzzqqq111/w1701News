@@ -44,7 +44,7 @@ $row=$result->fetch_assoc();
 <body>
 <form action="editConCon.php">
     标题: <input type="text" name="title" value="<?php echo $row['title']?>"><br>
-      <div con="<?php echo $row['con']?>" class="con"></div>
+      <div con='<?php echo $row['con']?>'class="con"> </div>
     内容:  <script id="editor" type="text/plain" style="width:500px;height:300px;" name="con" ></script>
     <input type="hidden" value="<?php echo $_GET['id']?>" name="id">
     <input type="hidden" value="<?php echo $_GET['cid']?>" name="cid">

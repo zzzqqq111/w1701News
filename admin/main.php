@@ -59,6 +59,9 @@ if(!isset($_SESSION["login"])){
         <span>
             <a href="logout.php">安全退出</a>
         </span>
+        <span>
+            <a href="../index/index.php" target="_blank">主页</a>
+        </span>
     </header>
     <div class="box">
         <div class="left">
