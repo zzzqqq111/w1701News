@@ -1,6 +1,11 @@
 <?php
   header("content-type:text/html;charset=utf-8");
   session_start();
+
+$url=($_SERVER["PHP_SELF"]);
+$pos=strrpos($url,"/");
+
+$index=md5(substr($url,0,$pos));
   include "../public/db.php";
   $uname=$_POST["uname"];
   $upass=md5($_POST["upass"]);
@@ -12,7 +17,7 @@
         if($row["uname"]==$uname){
             if($row["upass"]==$upass){
 
-                $_SESSION["login"]="yes";
+                $_SESSION[$index]="yes";
                 $_SESSION["uname"]=$uname;
                 $_SESSION["uid"]=$row["uid"];
 

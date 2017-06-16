@@ -18,6 +18,7 @@
 <body>
 <form action="addConConCon.php">
     标题: <input type="text" name="title"><br>
+    关键字：<input type="text" name="keywords"><br>
     内容:  <script id="editor" type="text/plain" style="width:500px;height:300px;" name="con"></script>
     <input type="hidden" value="<?php echo $_GET['cid']?>" name="cid">
     <input type="hidden" name="imgurl">
@@ -30,7 +31,7 @@
       while ($info=$result->fetch_assoc()) {
           ?>
 
-      <?php echo $info["posname"]?>      <input type="radio" name="posid" value="<?php echo $info['posid']?>">
+      <?php echo $info["posname"]?>      <input type="checkbox" name="posid[]" value="<?php echo $info['posid']?>">
 
           <?php
       }

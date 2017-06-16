@@ -1,6 +1,11 @@
 <?php
 session_start();
-if(isset($_SESSION["login"])){
+$url=($_SERVER["PHP_SELF"]);
+$pos=strrpos($url,"/");
+
+$index=md5(substr($url,0,$pos));
+
+if(isset($_SESSION[$index])){
     echo "<script>alert('已登录');location.href='main.php'</script>";
 }
 ?>

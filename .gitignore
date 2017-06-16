@@ -2,3 +2,4 @@
 /static/editor
 /ueditor
 .gitignore
+/index/upload

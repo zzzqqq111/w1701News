@@ -1,7 +1,11 @@
 <?php
 header("content-type:text/html;charset=utf8");
 session_start();
-if(!isset($_SESSION["login"])){
+$url=($_SERVER["PHP_SELF"]);
+$pos=strrpos($url,"/");
+
+$index=md5(substr($url,0,$pos));
+if(!isset($_SESSION[$index])){
     echo "<script>alert('请先登录');location.href='login.php'</script>";
 
     exit;
@@ -103,7 +107,7 @@ if(!isset($_SESSION["login"])){
                         </li>
 
                         <li>
-                            <a href="showCategory.php" target="iframe">查看位置</a>
+                            <a href="showPos.php" target="iframe">查看位置</a>
                         </li>
                     </ul>
                 </li>
