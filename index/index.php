@@ -35,26 +35,17 @@ session_start();
         .load{
             display: none;
             text-align: center;
-
         }
-
     </style>
     <script>
-
-
         $(function(){
-
             var widths=0;
             $(".navbox a").each(function(index,obj){
                 widths+=$(obj).outerWidth()
             })
             $(".navbox").css("width",widths);
-
-
             var left=0;
-
             mui(".mui-content").on("dragstart",".navbox",function(e){
-
                 left=parseInt($(".navbox").css("marginLeft"))?parseInt($(".navbox").css("marginLeft")):0;
 
             })

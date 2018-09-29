@@ -10,9 +10,7 @@ class upload {
         this.listStyle = {width: 100, height: 100, border: "1px solid #ccc", margin: 5}
         //  放的是具有数据的列表视图
         this.lists = [];
-
     }
-
     createView(params = {}) {
         //1.创建上传的大容器
         this.createContainer(params.container, params.parent, () => {
@@ -30,8 +28,6 @@ class upload {
 
             this.change();
         });
-
-
         //4. 创建预览
 
     }
